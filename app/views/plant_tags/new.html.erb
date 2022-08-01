@@ -1,0 +1,12 @@
+<div class="mx-auto w-1/3 mt-10">
+  <%= simple_form_for [@plant, @plant_tag] do |f| %>
+    <%#= f.association :tag, wrapper_html: { class: 'flex flex-col' } %>
+    <%= f.input :tag,
+      collection: Tag.order(:name),
+      input_html: {multiple: true, data: {behavior: "tom-select"}},
+      include_hidden: false
+    %>
+    <%= f.button :submit, class: 'bg-teal-600 py-1 px-2 text-white mt-4' %>
+  <% end %>
+
+</div>
